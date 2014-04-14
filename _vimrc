@@ -10,13 +10,22 @@ let mapleader = ","
 " reset all autocmds
 autocmd!
 
+" Some Linux distributions set filetype in /etc/vimrc. {{{1
+" Clear filetype flags before changing runtimepath to force Vim to reload them.
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+
 " auto reading/writing  {{{1
 set autoread                             " auto read externally modified files
 set autochdir                            " automatically cd to dir of file in current buffer
 set path+=**                             " path for opening files
 set sessionoptions-=options
-
+set nobackup
 " UI {{{1
+set lines=70 columns=150			 " default window size"
 set backspace=eol,start,indent           " make backspace better
 set clipboard+=unnamed                   " allow yank/paste b/tw 2 different Vim windows
 set cursorline                           " show cursor line by default
