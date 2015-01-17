@@ -10,13 +10,23 @@ let mapleader = ","
 " reset all autocmds
 autocmd!
 
-" Some Linux distributions set filetype in /etc/vimrc. {{{1
-" Clear filetype flags before changing runtimepath to force Vim to reload them.
-filetype off
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
-filetype plugin indent on
+" pathogen
+execute pathogen#infect()
+
+" syntax & color
 syntax on
+colorscheme solarized
+if has('gui_running')
+  set guifont=Consolas:h11
+endif
+
+" wildmenu
+set wildmenu
+set wildmode=list:longest,full
+
+" Edit vimrc
+nnoremap <silent> ,ev :e $HOME/vimrc/_vimrc<cr>
+nnoremap <silent> ,es :so $HOME/vimrc/_vimrc<cr>
 
 " auto reading/writing  {{{1
 set autoread							 " auto read externalled modified files
