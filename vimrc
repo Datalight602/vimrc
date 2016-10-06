@@ -38,6 +38,7 @@ set number								 " turn on line numbering
 set nowrap								 " no line wrapping on default
 set nobackup							 " no more ~ files
 set nowritebackup						 " no more ~ files
+set noundofile							 " no more un~ files
 
 " indentation {{{1
 set autoindent                           " autoindent
