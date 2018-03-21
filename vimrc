@@ -1,8 +1,7 @@
 " ------------------------------------------------
 " starter vimrc file
-" Last modified: Mon Mar 10, 2014  02:27PM
+" Last modified: Tue Mar 20 23:40:52 PDT 2018
 " ------------------------------------------------
-" NOTE: on windows I do source bitbucket/.vimrc in my $HOME/.vimrc
 "
 " must do this before any other mappings
 let mapleader = ","
