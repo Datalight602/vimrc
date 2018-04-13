@@ -11,7 +11,9 @@ autocmd!
 
 " syntax & color
 syntax on
-colorscheme darkblue
+set background=dark
+colorscheme solarized
+"let g:solarized_termcolors=256
 
 " wildmenu
 set wildmenu
