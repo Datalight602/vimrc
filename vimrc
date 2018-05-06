@@ -11,7 +11,7 @@ autocmd!
 
 " syntax & color
 syntax on
-set background=dark
+set background=light
 colorscheme solarized
 "let g:solarized_termcolors=256
 
