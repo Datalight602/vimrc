@@ -1,0 +1,25 @@
+{
+  "autologin": {
+    "enable": true
+  },
+  "code": {
+    "editor": "vim",
+    "lang": "cpp"
+  },
+  "color": {
+    "enable": true,
+    "theme": "solarized.light"
+  },
+  "icon": {
+    "theme": ""
+  },
+  "network": {
+    "concurrency": 10
+  },
+  "plugins": {
+    "github": {
+      "token": "e47372e389774cb3b1b4f5d8ef5c7f24fce26a34",
+      "repo": "https://github.com/lxz2049/leetcode/auto_submit"
+    }
+  }
+}
