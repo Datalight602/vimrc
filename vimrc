@@ -22,14 +22,27 @@ set wildmode=list:longest,full
 " auto reading/writing  {{{1
 set autoread							 " auto read externalled modified files
 
+" Quickly edit/reload this configuration file
+nnoremap gev :e $MYVIMRC<CR>
+nnoremap gsv :so $MYVIMRC<CR>
+
+set path+=**
+
 " UI {{{1
 set nocompatible						 " no vi compatibility
 set cursorline							 " show cursor line by default
-set number								 " turn on line numbering
 set nowrap								 " no line wrapping on default
 set nobackup							 " no more ~ files
 set nowritebackup						 " no more ~ files
 set noundofile							 " no more un~ files
+
+" auto toggle relative line number
+set number relativenumber                " hybrid 
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
 
 " indentation {{{1
 set autoindent                           " autoindent
