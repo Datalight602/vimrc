@@ -11,7 +11,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/org/project.org" "~/org/life.org")))
+ '(org-agenda-files (quote ("~/org/work.org")))
  '(package-selected-packages (quote (evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -23,25 +23,25 @@
 (require 'evil)
 (evil-mode t)
 
+(setq confirm-kill-emacs 'y-or-n-p)
+
+;; Org mode
 (require 'org)
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key "\C-cc" 'org-capture)
+(setq org-catch-invisible-edits 'smart)
 (setq org-log-done t)
-
-(setq org-agenda-files (list "~/org"))
-
+(setq org-agenda-files '("~/org"))
 (setq org-directory "~/org")
 (setq org-default-notes-file "~/org/inbox.org")
+(setq org-clock-mode-line-total 'current)
 
-;; I use C-c c to start capture mode
-(global-set-key (kbd "C-c c") 'org-capture)
-
-;; Capture templates
+;; Five-min journal capture templates
 (setq org-capture-templates
-      (quote (("a" "5minA" entry (file+datetree "~/org/fiveminute.org")
-               "* I am grateful for...\n
-		What would make today great?\n
-		Daily affirmations, I am...\n")
-	      ("b" "5minB" entry (file+datetree "~/org/fiveminute.org")
-               "* 3 Amazing things that happened today...\n
-		How could I have made today better?\n"))))
+      (quote (("a" "5min am" entry (file+datetree "~/org/fiveminute.org")
+               "* I am grateful for...\n* What would make today great?\n* Daily affirmations, I am...\n")
+	      ("p" "5min pm" entry (file+datetree "~/org/fiveminute.org")
+               "* 3 Amazing things that happened today...\n* How could I have made today better?\n"))))
+
