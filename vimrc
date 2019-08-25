@@ -12,7 +12,7 @@ autocmd!
 " syntax & color
 syntax on
 set background=light
-colorscheme solarized
+colorscheme default
 "let g:solarized_termcolors=256
 
 " wildmenu
