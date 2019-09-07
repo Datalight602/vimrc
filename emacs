@@ -37,7 +37,7 @@
 
 ;; Clock
 (setq org-clock-into-drawer t)  ;; this is necessary or :clock-resume will break
-(setq org-clock-in-switch-to-state "TODO")
+;(setq org-clock-in-switch-to-state "TODO")
 ;(setq org-clock-out-switch-to-state "DONE")
 (setq org-clock-out-remove-zero-time-clocks t)
 (setq org-clock-out-when-done t)
