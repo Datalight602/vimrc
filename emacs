@@ -22,7 +22,7 @@
 
 ;; Capture templates
 (setq org-capture-templates
-      (quote (("t" "task" entry (file+headline "~/org/my.org" "Tasks")
+      (quote (("t" "task" entry (file+headline "~/org/my.org" "tasks")
                "* %?" :clock-in t :clock-resume t)
               ("a" "5min am" entry (file+datetree "~/org/fiveminute.org")
                "* I am grateful for...\n* What would make today great?\n* Daily affirmations, I am...\n")
@@ -38,7 +38,7 @@
 ;; Clock
 (setq org-clock-into-drawer t)  ;; this is necessary or :clock-resume will break
 (setq org-clock-in-switch-to-state "TODO")
-(setq org-clock-out-switch-to-state "DONE")
+;(setq org-clock-out-switch-to-state "DONE")
 (setq org-clock-out-remove-zero-time-clocks t)
 (setq org-clock-out-when-done t)
 (setq org-clock-idle-time 15)
