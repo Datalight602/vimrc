@@ -20,6 +20,10 @@
 (setq org-clock-mode-line-total 'current)
 ;(setq org-log-done t)
 
+;; TODO states
+(setq org-todo-keywords
+      '((sequence "TODO" "NEXT" "VERIFY" "DONE")))
+
 ;; Capture templates
 (setq org-capture-templates
       (quote (("t" "task" entry (file+headline "~/org/my.org" "tasks")
@@ -37,8 +41,9 @@
 
 ;; Clock
 (setq org-clock-into-drawer t)  ;; this is necessary or :clock-resume will break
-;(setq org-clock-in-switch-to-state "TODO")
-;(setq org-clock-out-switch-to-state "DONE")
+(setq org-clock-in-switch-to-state "NEXT")
+(setq org-clock-out-switch-to-state "VERIFY")
+(setq org-clock-report-include-clocking-task t)
 (setq org-clock-out-remove-zero-time-clocks t)
 (setq org-clock-out-when-done t)
 (setq org-clock-idle-time 15)
