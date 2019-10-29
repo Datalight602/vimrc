@@ -12,7 +12,7 @@ autocmd!
 " syntax & color
 syntax on
 set background=light
-colorscheme default
+colorscheme solarized
 "let g:solarized_termcolors=256
 
 " wildmenu
@@ -63,3 +63,6 @@ syntax on                                " enable syntax highlighting
 filetype on                              " enable filetype detection
 filetype indent on                       " enable filetype-specific indenting
 filetype plugin on                       " enable filetype-specific plugins
+
+" backspace {{{1
+set backspace=indent,eol,start
