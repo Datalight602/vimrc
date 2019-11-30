@@ -47,3 +47,4 @@
 (setq org-clock-out-remove-zero-time-clocks t)
 (setq org-clock-out-when-done t)
 (setq org-clock-idle-time 15)
+(setq org-duration-format (quote h:mm))
