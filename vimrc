@@ -47,7 +47,7 @@ set number relativenumber                " hybrid
 " indentation {{{1
 set autoindent                           " autoindent
 set expandtab                          " use spaces
-set shiftwidth=4 tabstop=4               " tab size
+set shiftwidth=2 tabstop=2               " tab size
 set listchars=tab:>.,trail:.,extends:\
 
 " searching {{{1
