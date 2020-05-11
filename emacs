@@ -15,6 +15,7 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-switchb)
 (global-set-key "\C-cc" 'org-capture)
+(define-key org-mode-map (kbd "C-c C-x C-a") nil)  ; this key combination archives the current subtree and is not undo-able therefore disabling it explicitly
 (setq org-catch-invisible-edits 'smart)
 (setq org-directory "~/org")
 (setq org-agenda-files (list org-directory))
@@ -23,26 +24,25 @@
 
 ;; TODO states
 (setq org-todo-keywords
-      '((sequence "TODO" "VERIFY" "DONE")))
+      '((sequence "TODO" "IN-PROGRESS" "|" "VERIFY" "DONE")))
 
 ;; Capture templates
 (setq org-capture-templates
       (quote (("t" "task" entry (file+headline "~/org/my.org" "tasks")
-               "* %?" :clock-in t :clock-resume t)
-              ("a" "5min am" entry (file+datetree "~/org/fiveminute.org")
-               "* I am grateful for...\n* What would make today great?\n* Daily affirmations, I am...\n")
-              ("p" "5min pm" entry (file+datetree "~/org/fiveminute.org")
-               "* 3 Amazing things that happened today...\n* How could I have made today better?\n"))))
+               "* %?" :clock-in t :clock-resume t))))
 
 ;; Agenda view
-(setq org-agenda-custom-commands
-      '(("c" "Simple agenda view"
-         ((agenda "")
-          (alltodo "")))))
+(setq org-agenda-files '("~/org/my.org"))
+(setq org-agenda-archives-mode t)
+(setq org-agenda-clockreport-mode t) ; TODO doesn't seem to work
+(setq org-agenda-window-setup 'current-window)
+(setq org-agenda-restore-windows-after-quit t)
+(setq org-agenda-clockreport-parameter-plist (quote (:link t :maxlevel 5)))
+;(setq org-agenda-custom-commands '(("c" "Simple agenda view" ((agenda "") (alltodo "")))))
 
 ;; Clock
 (setq org-clock-into-drawer t)  ;; this is necessary or :clock-resume will break
-(setq org-clock-in-switch-to-state "TODO")
+(setq org-clock-in-switch-to-state "IN-PROGRESS")
 (setq org-clock-out-switch-to-state "VERIFY")
 (setq org-clock-report-include-clocking-task t)
 (setq org-clock-out-remove-zero-time-clocks t)
