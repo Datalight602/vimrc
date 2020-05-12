@@ -33,11 +33,13 @@
 
 ;; Agenda view
 (setq org-agenda-files '("~/org/my.org"))
-(setq org-agenda-archives-mode t)
-(setq org-agenda-clockreport-mode t) ; TODO doesn't seem to work
+;(setq org-agenda-archives-mode 'trees)
+(setq org-agenda-skip-archived-trees nil)
+(setq org-agenda-start-with-clockreport-mode t)
 (setq org-agenda-window-setup 'current-window)
 (setq org-agenda-restore-windows-after-quit t)
 (setq org-agenda-clockreport-parameter-plist (quote (:link t :maxlevel 5)))
+(setq org-agenda-span 'day)
 ;(setq org-agenda-custom-commands '(("c" "Simple agenda view" ((agenda "") (alltodo "")))))
 
 ;; Clock
