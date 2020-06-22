@@ -24,7 +24,7 @@
 
 ;; TODO states
 (setq org-todo-keywords
-      '((sequence "TODO" "IN-PROGRESS" "|" "VERIFY" "DONE")))
+      '((sequence "TODO" "IN-PROGRESS" "VERIFY" "|" "DONE")))
 
 ;; Capture templates
 (setq org-capture-templates
@@ -40,6 +40,7 @@
 (setq org-agenda-restore-windows-after-quit t)
 (setq org-agenda-clockreport-parameter-plist (quote (:link t :maxlevel 5)))
 (setq org-agenda-span 'day)
+(setq org-agenda-todo-ignore-scheduled 'all)
 ;(setq org-agenda-custom-commands '(("c" "Simple agenda view" ((agenda "") (alltodo "")))))
 
 ;; Clock
