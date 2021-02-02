@@ -33,17 +33,22 @@
 
 ;; Agenda view
 (setq org-agenda-files '("~/org/my.org"))
-;(setq org-agenda-archives-mode 'trees)
 (setq org-agenda-skip-archived-trees nil)
-(setq org-agenda-start-with-clockreport-mode t)
 (setq org-agenda-window-setup 'current-window)
 (setq org-agenda-restore-windows-after-quit t)
-(setq org-agenda-clockreport-parameter-plist (quote (:link t :maxlevel 5)))
 (setq org-agenda-span 'day)
-(setq org-agenda-todo-ignore-scheduled 'all)
+;(setq org-agenda-archives-mode 'trees)
+;(setq org-agenda-todo-ignore-scheduled 'all)
 ;(setq org-agenda-custom-commands '(("c" "Simple agenda view" ((agenda "") (alltodo "")))))
+;(setq org-agenda-start-with-clockreport-mode t)
+;(setq org-agenda-clockreport-parameter-plist (quote (:link t :maxlevel 5)))
 
-;; Clock
+;; custom agenda view
+;;(setq org-agenda-custom-commands
+;;      `(;; match tasks that are not scheduled, are not DONE.
+;;         ("i" "[i]nbox tagged unscheduled done tasks" (tags "-SCHEDULED={.+}/DONE") (org-agenda-skip-function '(org-agenda-skip-entry-if 'scheduled 'deadline 'timestamp 'regexp)))))
+
+;; Clock - no longer in use
 (setq org-clock-into-drawer t)  ;; this is necessary or :clock-resume will break
 (setq org-clock-in-switch-to-state "IN-PROGRESS")
 (setq org-clock-out-switch-to-state "VERIFY")
